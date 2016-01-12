@@ -1,0 +1,62 @@
+//所有工程都要用的公共配置，由各个子模块直接apply from 如：apply from: '../global_config.gradle'
+ android {
+  compileSdkVersion 23
+  buildToolsVersion '23.0.0'
+
+  useLibrary 'org.apache.http.legacy'
+
+  defaultConfig {
+    minSdkVersion 14
+    targetSdkVersion 23
+  }
+
+  buildTypes {
+    debug {
+      debuggable true
+      minifyEnabled false
+    }
+    release {
+      minifyEnabled false
+    }
+  }
+
+  sourceSets {
+    main {
+      jniLibs.srcDirs = ['libs']
+    }
+  }
+
+  dexOptions {
+    javaMaxHeapSize "4g"
+    preDexLibraries = false
+  }
+
+  // lint所有选项请单独加入
+  lintOptions {
+    checkReleaseBuilds true
+    abortOnError false
+    check 'NewApi' //新API
+    showAll true
+    textReport true
+    xmlReport true
+    htmlReport true
+  }
+}
+
+
+repositories {
+//  flatDir {
+//    dirs 'libs'
+//  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+//  compile(name:'common-release', ext:'aar')
+//  compile(name:'net-release', ext:'aar')
+//  compile(name:'img-release', ext:'aar')
+//  compile(name:'db-release', ext:'aar')
+//  compile(name:'ui-release', ext:'aar')
+//  compile(name:'frame-release', ext:'aar')
+}
+

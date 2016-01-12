@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+apply from: '../global_config.gradle'
+
+dependencies {
+  //    分享部分, 版本更新
+  //  compile fileTree(include: ['*.jar'], dir: 'libs')
+  //    分析部分
+  //    compile 'com.umeng.analytics:analytics:5.5.3'
+  compile 'com.umeng.analytics:analytics:latest.integration'
+  //   反馈 maven { url "https://raw.githubusercontent.com/umeng/mvn-repo-umeng/master/repository" }
+  compile 'com.umeng:fb:latest.integration'
+}
