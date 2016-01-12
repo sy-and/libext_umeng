@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-apply from: '../global_config.gradle'
+//apply from: '$rootDir/gradle/global_config.gradle'
+apply from: '../gradle/global_config.gradle'
 
 dependencies {
   //    分享部分, 版本更新
