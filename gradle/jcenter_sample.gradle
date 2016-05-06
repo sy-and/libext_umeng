@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply from: "bintray_install.gradle"
+apply from: "bintray.gradle"
+
+ext {
+//    bintrayRepo = 'maven'
+    bintrayName = 'libext-umeng'                      ////发布到JCenter上的项目名字
+
+    publishedGroupId = 'org.zsy.frame.libext.umeng'   //GroupId,这个要别人引用的时候会用到，
+    artifactId = 'umeng'                               //artifactId，这个也是别人引用的时候，会用到，它要和Module名字一样
+    libraryName = 'umeng'                            //这个是项目名字
+
+    libraryDescription = 'A libext umeng  on Android'       //项目描述
+
+    siteUrl = 'https://github.com/syframe-android/libext_umeng'          //把项目分享到github后的项目地址
+    gitUrl = 'https://github.com/syframe-android/libext_umeng.git'       //分享后的项目git地址
+
+    libraryVersion = '1.0.0'
+    developerId = 'hongfeiliuxing'                        //这个开发者id，自己写
+    developerName = 'samyzhang'                           //这个是开发者名字
+    developerEmail = 'hongfeiliuxing@gmail.com'           //开发者邮箱
+
+    licenseName = 'The Apache Software License, Version 2.0'     //开源协议
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
