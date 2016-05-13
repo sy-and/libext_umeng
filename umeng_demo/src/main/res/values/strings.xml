@@ -1,3 +1,9 @@
 <resources>
   <string name="app_name">umeng_demo</string>
+  <string name="umeng_share">分享</string>
+  <string name="umeng_openshare">打开分享面板</string>
+  <string name="umeng_openshare_custom">打开自定义分享面板</string>
+  <string name="umeng_auth">授权</string>
+  <string name="umeng_deleauth">清除对应授权</string>
+
 </resources>

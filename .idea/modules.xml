@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/libext_umeng.iml" filepath="$PROJECT_DIR$/libext_umeng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umeng/umeng.iml" filepath="$PROJECT_DIR$/umeng/umeng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umeng_demo/umeng_demo.iml" filepath="$PROJECT_DIR$/umeng_demo/umeng_demo.iml" />
+    </modules>
+  </component>
+</project>
