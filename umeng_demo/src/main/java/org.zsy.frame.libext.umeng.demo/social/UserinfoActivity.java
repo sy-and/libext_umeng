@@ -25,7 +25,7 @@ public class UserinfoActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_user);
+        setContentView(R.layout.social_app_user);
         mShareAPI = UMShareAPI.get(this);
     }
     public void onClick(View view) {

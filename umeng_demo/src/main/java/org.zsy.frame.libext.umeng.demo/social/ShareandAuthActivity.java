@@ -37,7 +37,7 @@ public class ShareandAuthActivity extends Activity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_share_auth);
+        setContentView(R.layout.social_app_share_auth);
         authbutton = (Button)findViewById(R.id.umeng_auth);
         shareButton = (Button)findViewById(R.id.umeng_share);
         userbutton = (Button)findViewById(R.id.umeng_userinfo);

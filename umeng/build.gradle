@@ -5,11 +5,13 @@ apply from: '../gradle/global_config.gradle'
 apply from: '../gradle/bintray_maven_config.gradle'
 
 dependencies {
-  //    分享部分, 版本更新
-  //  compile fileTree(include: ['*.jar'], dir: 'libs')
-  //    分析部分
-  //    compile 'com.umeng.analytics:analytics:5.5.3'
-//  compile 'com.umeng.analytics:analytics:latest.integration'
-  //   反馈 maven { url "https://raw.githubusercontent.com/umeng/mvn-repo-umeng/master/repository" }
-//  compile 'com.umeng:fb:latest.integration'
+    //    分享部分, 版本更新
+    //  compile fileTree(include: ['*.jar'], dir: 'libs')
+    //    分析部分
+    //    compile 'com.umeng.analytics:analytics:5.5.3'
+    //  compile 'com.umeng.analytics:analytics:latest.integration'
+    //   反馈 maven { url "https://raw.githubusercontent.com/umeng/mvn-repo-umeng/master/repository" }
+    //  compile 'com.umeng:fb:latest.integration'
+    compile files('libs/utdid4all-1.0.4.jar')
+    compile files('libs/umeng-analytics-v6.0.0.jar')
 }

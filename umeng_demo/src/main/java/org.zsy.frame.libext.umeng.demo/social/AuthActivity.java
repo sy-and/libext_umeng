@@ -60,7 +60,7 @@ public class AuthActivity extends Activity{
     }
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_auth);
+        setContentView(R.layout.social_app_auth);
         /** init auth api**/
         mShareAPI = UMShareAPI.get( this );
     }

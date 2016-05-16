@@ -62,7 +62,7 @@ public class ShareActivity extends Activity {
         String url = "http://www.umeng.com";
 
         ProgressDialog dialog = new ProgressDialog(this);
-        dialog.setTitle("启动微信");
+        dialog.setTitle("启动应用");
         dialog.setMessage("请稍等.....");
         Config.dialog = dialog;
 
@@ -166,7 +166,7 @@ public class ShareActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_share);
+        setContentView(R.layout.social_app_share);
         /** need not init ,but must config GlobalApp.java**/
 
         cb = (CheckBox) findViewById(R.id.checkBox_close_editor);

@@ -18,30 +18,98 @@
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
 
     <application
+        android:name="org.zsy.frame.libext.umeng.demo.GlobalApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name="org.zsy.frame.libext.umeng.demo.GlobalApp"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="4eaee02c527015373b000003"></meta-data>
+            android:value="573960dfe0f55a52f8001fab"/>
 
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="Channel ID" />
-
+            android:value="gitHub" />
 
         <activity
-            android:name=".social.ShareActivity"
-            android:configChanges="orientation|keyboard"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+            android:name="org.zsy.frame.libext.umeng.demo.base.LauncherAct"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--umeng分析部分-->
+        <activity
+            android:name="org.zsy.frame.libext.umeng.demo.analytics.AnalyticsMainAct"
+            android:label="@string/org.zsy.frame.libext.umeng.demo.analytics.AnalyticsMainAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.zsy.frame.libext.umeng.demo.analytics.game.GameAnalyticsHomeAct"
+            android:label="@string/org.zsy.frame.libext.umeng.demo.analytics.game.GameAnalyticsHomeAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="org.zsy.frame.libext.umeng.demo.analytics.normal.AnalyticsHomeAct"
+            android:label="@string/org.zsy.frame.libext.umeng.demo.analytics.normal.AnalyticsHomeAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="org.zsy.frame.libext.umeng.demo.analytics.normal.FragmentStackAct"
+            android:label="@string/org.zsy.frame.libext.umeng.demo.analytics.normal.FragmentStackAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.zsy.frame.libext.umeng.demo.analytics.normal.FragmentTabsAct"
+            android:label="@string/org.zsy.frame.libext.umeng.demo.analytics.normal.FragmentTabsAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.zsy.frame.libext.umeng.demo.analytics.normal.WebviewAnalyticAct"
+            android:label="@string/org.zsy.frame.libext.umeng.demo.analytics.normal.WebviewAnalyticAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+
+        <!--社会化分享部分-->
+        <activity
+            android:name="org.zsy.frame.libext.umeng.demo.social.ShareActivity"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/org.zsy.frame.libext.umeng.demo.social.ShareActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
 
@@ -105,26 +173,26 @@
         <uses-library android:name="android.test.runner" />
         <!--&lt;!&ndash; facebook &ndash;&gt;-->
         <!--<activity-->
-            <!--android:name="com.facebook.FacebookActivity"-->
-            <!--android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
-            <!--android:label="@string/app_name"-->
-            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+        <!--android:name="com.facebook.FacebookActivity"-->
+        <!--android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
+        <!--android:label="@string/app_name"-->
+        <!--android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
         <!--&lt;!&ndash;1104087112943046&ndash;&gt;-->
         <!--<provider-->
-            <!--android:name="com.facebook.FacebookContentProvider"-->
-            <!--android:authorities="com.facebook.app.FacebookContentProvider487692214752558"-->
-            <!--android:exported="true" />-->
+        <!--android:name="com.facebook.FacebookContentProvider"-->
+        <!--android:authorities="com.facebook.app.FacebookContentProvider487692214752558"-->
+        <!--android:exported="true" />-->
 
         <!--<meta-data-->
-            <!--android:name="com.facebook.sdk.ApplicationId"-->
-            <!--android:value="@string/facebook_app_id" />-->
+        <!--android:name="com.facebook.sdk.ApplicationId"-->
+        <!--android:value="@string/facebook_app_id" />-->
         <!--&lt;!&ndash; twitter &ndash;&gt;-->
         <!--<activity-->
-            <!--android:name="com.umeng.socialize.handler.TwitterWebActivity"-->
-            <!--android:configChanges=-->
-                <!--"keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
-            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
-            <!--android:label="@string/app_name" />-->
+        <!--android:name="com.umeng.socialize.handler.TwitterWebActivity"-->
+        <!--android:configChanges=-->
+        <!--"keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
+        <!--android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
+        <!--android:label="@string/app_name" />-->
     </application>
 
 </manifest>
