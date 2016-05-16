@@ -25,6 +25,10 @@ import java.util.Map;
 /**
  * 如果开发者调用Process.kill或者System.exit之类的方法杀死进程，请务必在此之前调用MobclickAgent.onKillProcess(Context context)方法，用来保存统计数据。
  * 非常重要：必须调用 MobclickAgent.onResume() 和MobclickAgent.onPause()方法，才能够保证获取正确的新增用户、活跃用户、启动次数、使用时长等基本数据。
+ * <p/>
+ * 1. MobclickAgent.onResume() 和MobclickAgent.onPause() 方法是用来统计应用时长的(也就是Session时长,当然还包括一些其他功能)
+ * <p/>
+ * 2.MobclickAgent.onPageStart() 和 MobclickAgent.onPageEnd() 方法是用来统计页面跳转的
  */
 public class AnalyticsHomeAct extends Activity {
     private Context mContext;
@@ -69,59 +73,59 @@ public class AnalyticsHomeAct extends Activity {
     public void onButtonClick(View view) {
         int id = view.getId();
         switch (id) {
-        case R.id.umeng_example_analytics_event_cc:
-            List<String> keyPath = new ArrayList<String>();
-            keyPath.add("one");
-            keyPath.add("two");
-            keyPath.add("tree");
-            MobclickAgent.onEvent(mContext, keyPath, 20, "label");
-            break;
-        case R.id.umeng_example_analytics_event:
-            MobclickAgent.onEvent(mContext, "click");
-            MobclickAgent.onEvent(mContext, "click", "button");
-            break;
-        case R.id.umeng_example_analytics_ekv:
-            Map<String, String> map_ekv = new HashMap<String, String>();
-            map_ekv.put("type", "popular");
-            map_ekv.put("artist", "JJLin");
+            case R.id.umeng_example_analytics_event_cc:
+                List<String> keyPath = new ArrayList<String>();
+                keyPath.add("one");
+                keyPath.add("two");
+                keyPath.add("tree");
+                MobclickAgent.onEvent(mContext, keyPath, 20, "label");
+                break;
+            case R.id.umeng_example_analytics_event:
+                MobclickAgent.onEvent(mContext, "click");
+                MobclickAgent.onEvent(mContext, "click", "button");
+                break;
+            case R.id.umeng_example_analytics_ekv:
+                Map<String, String> map_ekv = new HashMap<String, String>();
+                map_ekv.put("type", "popular");
+                map_ekv.put("artist", "JJLin");
 
-            MobclickAgent.onEvent(mContext, "music", map_ekv);
-            break;
-        case R.id.umeng_example_analytics_duration:
+                MobclickAgent.onEvent(mContext, "music", map_ekv);
+                break;
+            case R.id.umeng_example_analytics_duration:
 
-            Map<String, String> map_value = new HashMap<String, String>();
-            map_value.put("type", "popular");
-            map_value.put("artist", "JJLin");
+                Map<String, String> map_value = new HashMap<String, String>();
+                map_value.put("type", "popular");
+                map_value.put("artist", "JJLin");
 
-            MobclickAgent.onEventValue(this, "music", map_value, 12000);
-            break;
-        case R.id.umeng_example_analytics_make_crash:
-            "123".substring(10);
-            break;
-        case R.id.umeng_example_analytics_js_analytic:
-            startActivity(new Intent(this, WebviewAnalyticAct.class));
-            break;
-        case R.id.umeng_example_analytics_fragment_stack:
-            startActivity(new Intent(this, FragmentStackAct.class));
-            break;
-        case R.id.umeng_example_analytics_fragment_tabs:
-            startActivity(new Intent(this, FragmentTabsAct.class));
-            break;
-        case R.id.umeng_example_analytics_social:
+                MobclickAgent.onEventValue(this, "music", map_value, 12000);
+                break;
+            case R.id.umeng_example_analytics_make_crash:
+                "123".substring(10);
+                break;
+            case R.id.umeng_example_analytics_js_analytic:
+                startActivity(new Intent(this, WebviewAnalyticAct.class));
+                break;
+            case R.id.umeng_example_analytics_fragment_stack:
+                startActivity(new Intent(this, FragmentStackAct.class));
+                break;
+            case R.id.umeng_example_analytics_fragment_tabs:
+                startActivity(new Intent(this, FragmentTabsAct.class));
+                break;
+            case R.id.umeng_example_analytics_social:
 
-            UMPlatformData platform = new UMPlatformData(UMedia.SINA_WEIBO, "user_id");
-            platform.setGender(GENDER.MALE); // optional
-            platform.setWeiboId("weiboId"); // optional
+                UMPlatformData platform = new UMPlatformData(UMedia.SINA_WEIBO, "user_id");
+                platform.setGender(GENDER.MALE); // optional
+                platform.setWeiboId("weiboId"); // optional
 
-            MobclickAgent.onSocialEvent(this, platform);
-            break;
-        case R.id.umeng_example_analytics_signin:
-            MobclickAgent.onProfileSignIn("example_id");
-            break;
+                MobclickAgent.onSocialEvent(this, platform);
+                break;
+            case R.id.umeng_example_analytics_signin:
+                MobclickAgent.onProfileSignIn("example_id");
+                break;
 
-        case R.id.umeng_example_analytics_signoff:
-            MobclickAgent.onProfileSignOff();
-            break;
+            case R.id.umeng_example_analytics_signoff:
+                MobclickAgent.onProfileSignOff();
+                break;
         }
     }
 
