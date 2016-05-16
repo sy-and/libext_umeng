@@ -1,0 +1,76 @@
+def releaseTime() {
+  return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+8"))
+}
+
+android {
+  defaultConfig {
+    applicationId "org.zsy.frame.libext.umeng.demo"
+    minSdkVersion 14
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+  }
+
+  signingConfigs {
+    debug {
+
+    }
+    release {
+
+    }
+  }
+
+  buildTypes {
+    debug {
+      zipAlignEnabled true
+      shrinkResources true
+      signingConfig signingConfigs.debug
+    }
+    release {
+      buildConfigField "boolean", "LOG_DEBUG", "false"
+      debuggable false
+      zipAlignEnabled true
+      shrinkResources true
+      minifyEnabled false
+      signingConfig signingConfigs.release
+    }
+
+//    applicationVariants.all { variant ->
+//      variant.outputs.each { output ->
+//        def outputFile = output.outputFile
+//        if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//          def fileName = outputFile.name.replace(".apk",
+//              "-${defaultConfig.versionName}-${releaseTime()}.apk")
+//          output.outputFile = new File(outputFile.parent, fileName)
+//        }
+//      }
+//    }
+  }
+//
+//  File propFile = file('D:/apk/release/properties/signing_as.properties');
+  File propFile = file('file:///Users/samy/Documents/study/keys/signing_as.properties');
+  if (propFile.exists()) {
+    def Properties props = new Properties()
+    props.load(new FileInputStream(propFile))
+//    STORE_FILE=file:///Users/samy/Documents/study/keys/androd_dev_**.jks
+    if (props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
+        props.containsKey('KEY_ALIAS') &&
+        props.containsKey('KEY_PASSWORD')) {
+      android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
+      android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+      android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+      android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
+
+      android.signingConfigs.debug.storeFile = file(props['STORE_FILE'])
+      android.signingConfigs.debug.storePassword = props['STORE_PASSWORD']
+      android.signingConfigs.debug.keyAlias = props['KEY_ALIAS']
+      android.signingConfigs.debug.keyPassword = props['KEY_PASSWORD']
+    } else {
+      android.buildTypes.release.signingConfig = null
+      android.buildTypes.debug.signingConfig = null
+    }
+  } else {
+    android.buildTypes.release.signingConfig = null
+    android.buildTypes.debug.signingConfig = null
+  }
+}

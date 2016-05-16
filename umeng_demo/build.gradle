@@ -1,18 +1,8 @@
 apply plugin: 'com.android.application'
 
 apply from: '../gradle/global_config.gradle'
+apply from: '../gradle/build_config.gradle'
 
-
-
-android {
-  defaultConfig {
-    applicationId "org.zsy.frame.libext.umeng.demo"
-    minSdkVersion 14
-    targetSdkVersion 23
-    versionCode 1
-    versionName "1.0"
-  }
-}
 
 dependencies {
   compile fileTree(include: ['*.jar'], dir: 'libs')
