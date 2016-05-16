@@ -8,6 +8,7 @@
     盒子TV、游戏和标准统计SDK版本整合。
     
 ###社会化分享 社会化Android组件  5.1.0(2016-04-07) [接入文档](http://dev.umeng.com/social/android/android-update)
+    功能更新：
     新增QQ、微信、新浪分享回流率统计功能
     全新适配Android6.0
     新增Facebook intent方式分享
