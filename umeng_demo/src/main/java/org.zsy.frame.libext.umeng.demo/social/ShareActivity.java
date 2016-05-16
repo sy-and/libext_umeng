@@ -1,7 +1,9 @@
 package org.zsy.frame.libext.umeng.demo.social;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -26,13 +28,43 @@ import org.zsy.frame.libext.umeng.demo.R;
 public class ShareActivity extends Activity {
     private CheckBox cb;
 
+//    目前支持文本、图片（本地及URL）、音频及视频URL的分享
+    /**
+     * 图片(url)
+     */
+//    UMImage image = new UMImage(ShareActivity.this, "http://www.umeng.com/images/pic/social/integrated_3.png");
+//    图片(本地资源引用)
+//    UMImage image = new UMImage(ShareActivity.this,BitmapFactory.decodeResource(getResources(), R.drawable.image));
+//    图片(本地绝对路径)
+//    UMImage image = new UMImage(ShareActivity.this,BitmapFactory.decodeFile("/mnt/sdcard/icon.png")));
+
+    /**
+     * URL音频及图片
+     * @param view
+     */
+//    UMusic music = new UMusic("http://music.huoxing.com/upload/20130330/1364651263157_1085.mp3");
+//    music.setTitle("sdasdasd");
+//    music.setThumb(new UMImage(ShareActivity.this,"http://www.umeng.com/images/pic/social/chart_1.png"));
+
+    /**
+     * url视频
+     *
+     * @param view
+     */
+//    UMVideo video = new UMVideo("http://video.sina.com.cn/p/sports/cba/v/2013-10-22/144463050817.html");
     public void onClick(View view) {
-        UMImage image = new UMImage(ShareActivity.this, "http://www.umeng.com/images/pic/social/integrated_3.png");
+//        UMImage image = new UMImage(ShareActivity.this, "http://www.umeng.com/images/pic/social/integrated_3.png");
+        UMImage image = new UMImage(ShareActivity.this,BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
         UMusic music = new UMusic("http://music.huoxing.com/upload/20130330/1364651263157_1085.mp3");
         music.setTitle("This is music title");
         music.setThumb(new UMImage(ShareActivity.this, "http://www.umeng.com/images/pic/social/chart_1.png"));
         UMVideo video = new UMVideo("http://video.sina.com.cn/p/sports/cba/v/2013-10-22/144463050817.html");
         String url = "http://www.umeng.com";
+
+        ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setTitle("启动微信");
+        dialog.setMessage("请稍等.....");
+        Config.dialog = dialog;
 
         switch (view.getId()) {
             case R.id.app_open_share:
@@ -77,17 +109,18 @@ public class ShareActivity extends Activity {
                         .share();
                 break;
             case R.id.app_share_wx:
-
                 new ShareAction(this).setPlatform(SHARE_MEDIA.WEIXIN).setCallback(umShareListener)
-                        .withMedia(image)
+                         .withMedia(image)
                         //.withMedia(new UMEmoji(ShareActivity.this,"http://img.newyx.net/news_img/201306/20/1371714170_1812223777.gif"))
-                        .withText("hello umeng")
-//                        .withTargetUrl("http://dev.umeng.com")
+                        .withText("hello LibExt")
+                        .withTargetUrl("https://baidu.com")
                         .share();
                 break;
             case R.id.app_share_wx_circle:
                 new ShareAction(this).setPlatform(SHARE_MEDIA.WEIXIN_CIRCLE).setCallback(umShareListener)
                         .withMedia(image)
+                        .withText("hello LibExt")
+                        .withTargetUrl("https://baidu.com")
                         .share();
                 break;
             case R.id.app_share_sms:
