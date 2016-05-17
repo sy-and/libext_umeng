@@ -38,13 +38,13 @@
 
 
   <!--lable 部分-->
-  <string name="org.zsy.frame.libext.umeng.demo.analytics.AnalyticsMainAct">libext_umeng/analytics/AnalyticsMainAct</string>
-  <string name="org.zsy.frame.libext.umeng.demo.analytics.game.GameAnalyticsHomeAct">libext_umeng/analytics/game/GameAnalyticsHomeAct</string>
-  <string name="org.zsy.frame.libext.umeng.demo.analytics.normal.AnalyticsHomeAct">libext_umeng/analytics/normal/AnalyticsHomeAct</string>
-  <string name="org.zsy.frame.libext.umeng.demo.analytics.normal.FragmentStackAct">libext_umeng/analytics/normal/FragmentStackAct</string>
-  <string name="org.zsy.frame.libext.umeng.demo.analytics.normal.FragmentTabsAct">libext_umeng/analytics/normal/FragmentTabsAct</string>
-  <string name="org.zsy.frame.libext.umeng.demo.analytics.normal.WebviewAnalyticAct">libext_umeng/analytics/normal/WebviewAnalyticAct</string>
+  <string name="org.zsy.frame.libext.umeng.demo.analytics.AnalyticsMainAct">syframe/libext/libext_umeng/analytics/AnalyticsMainAct</string>
+  <string name="org.zsy.frame.libext.umeng.demo.analytics.game.GameAnalyticsHomeAct">syframe/libext/libext_umeng/analytics/game/GameAnalyticsHomeAct</string>
+  <string name="org.zsy.frame.libext.umeng.demo.analytics.normal.AnalyticsHomeAct">syframe/libext/libext_umeng/analytics/normal/AnalyticsHomeAct</string>
+  <string name="org.zsy.frame.libext.umeng.demo.analytics.normal.FragmentStackAct">syframe/libext/libext_umeng/analytics/normal/FragmentStackAct</string>
+  <string name="org.zsy.frame.libext.umeng.demo.analytics.normal.FragmentTabsAct">syframe/libext/libext_umeng/analytics/normal/FragmentTabsAct</string>
+  <string name="org.zsy.frame.libext.umeng.demo.analytics.normal.WebviewAnalyticAct">syframe/libext/libext_umeng/analytics/normal/WebviewAnalyticAct</string>
 
-  <string name="org.zsy.frame.libext.umeng.demo.social.ShareActivity">libext_umeng/social/ShareActivity</string>
+  <string name="org.zsy.frame.libext.umeng.demo.social.ShareActivity">syframe/libext/libext_umeng/social/ShareActivity</string>
 
 </resources>
