@@ -1,0 +1,18 @@
+/**
+ * bintray-release第二种方式
+ * 运行方式
+ *
+ ./gradlew clean build bintrayUpload -PbintrayUser=samyzhang -PbintrayKey=xxxxxxxxxxxxxxxxxxxxxx -PdryRun=false
+ */
+apply plugin: 'com.novoda.bintray-release'//添加
+
+//添加
+publish {
+    userOrg = 'samyzhang'//bintray.com用户名
+    groupId = 'org.zsy.frame.libext.umeng'//jcenter上的路径
+    artifactId = 'libext-umeng'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = 'A libext umeng  on Android'//描述，不重要
+    website = 'https://github.com/syframe-android/libext_umeng.git'
+//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+}
