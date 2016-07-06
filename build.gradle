@@ -17,6 +17,9 @@ allprojects {
   repositories {
     jcenter()
     mavenCentral()
+//    maven {
+//      url 'https://dl.bintray.com/samyzhang/maven/'
+//    }
     //        umeng com.umeng:fb:latest.integration
 //    maven { url "https://raw.githubusercontent.com/umeng/mvn-repo-umeng/master/repository" }
   }
