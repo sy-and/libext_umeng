@@ -12,7 +12,7 @@ publish {
     userOrg = 'samyzhang'//bintray.com用户名
     groupId = 'org.zsy.frame.libext.umeng'//jcenter上的路径
     artifactId = 'libext-umeng'//项目名称
-    publishVersion = '1.1.0'//版本号
+    publishVersion = '1.1.1'//版本号
     website = 'https://github.com/syframe-android/libext_umeng.git'//网站，不重要
-    desc = 'add libext umeng share'//描述，不重要
+    desc = 'add umeng more share tag'//描述，不重要
 }
