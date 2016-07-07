@@ -14,5 +14,5 @@ publish {
     artifactId = 'libext-umeng'//项目名称
     publishVersion = VERSION_NAME //版本号
     website = 'https://github.com/syframe-android/libext_umeng'//网站，不重要
-    desc = 'add umeng wx share'//描述，不重要
+    desc = 'add umeng more share'//描述，不重要
 }
