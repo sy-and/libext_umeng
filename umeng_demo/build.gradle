@@ -3,10 +3,20 @@ apply plugin: 'com.android.application'
 apply from: '../gradle/global_config.gradle'
 apply from: '../gradle/build_config.gradle'
 
+repositories {
+  flatDir {
+    dirs 'libs'
+  }
+}
 
 dependencies {
-  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile fileTree(dir: 'libs', include: '*.jar')
   compile 'com.android.support:appcompat-v7:23.0.0'
-//  compile project(':umeng')
-  compile 'org.zsy.frame.libext.umeng:libext-umeng:1.0.0'
+  //  compile project(':umeng')
+  compile(name: 'libext-umeng-1.1.1', ext: 'aar')
+//  compile 'org.zsy.frame.libext.umeng:libext-umeng:1.1.1@aar'
+//  compile 'org.zsy.frame.libext.umeng:libext-umeng:1.1.1'
+
 }
+
+
