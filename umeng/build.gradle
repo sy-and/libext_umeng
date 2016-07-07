@@ -7,12 +7,15 @@ apply from: '../gradle/bintray_maven_config_release.gradle'
 
 dependencies {
     // 分享部分, 版本更新
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     //    分析部分
     //    compile 'com.umeng.analytics:analytics:5.5.3'
     //  compile 'com.umeng.analytics:analytics:latest.integration'
     //   反馈 maven { url "https://raw.githubusercontent.com/umeng/mvn-repo-umeng/master/repository" }
     //  compile 'com.umeng:fb:latest.integration'
+    compile files('libs/SocialSDK_WeiXin_1.jar')
+    compile files('libs/SocialSDK_WeiXin_2.jar')
+    compile files('libs/umeng_social_sdk.jar')
 }
 
 
