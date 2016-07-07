@@ -6,7 +6,7 @@ apply from: '../gradle/global_config.gradle'
 apply from: '../gradle/bintray_maven_config_release.gradle'
 
 dependencies {
-    //  //  分享部分, 版本更新
+    // 分享部分, 版本更新
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //    分析部分
     //    compile 'com.umeng.analytics:analytics:5.5.3'
