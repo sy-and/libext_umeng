@@ -13,6 +13,6 @@ publish {
     groupId = 'org.zsy.frame.libext.umeng'//jcenter上的路径
     artifactId = 'libext-umeng'//项目名称
     publishVersion = VERSION_NAME //版本号
-    website = 'https://github.com/syframe-android/libext_umeng.git'//网站，不重要
-    desc = 'add umeng analyse'//描述，不重要
+    website = 'https://github.com/syframe-android/libext_umeng'//网站，不重要
+    desc = 'add umeng wx share'//描述，不重要
 }
